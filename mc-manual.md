@@ -40,7 +40,7 @@ It might be a pointer to an array of C++ objects (which possess destructors) all
 It might be a pointer to an inner part of a C++ object using multiple inheritance.
 -->
 
-* ポインタはもともとは開始ポインタであったかもしれず、故意に（あるいは故意でなく）プログラムによって動かされたかもしれない。特に、プログラムが *tagged pointer* ([Tagged pointer - Wikipedia](https://en.wikipedia.org/wiki/Tagged_pointer))を使用している場合、つまり、ポインタの下位1ビット、2ビットまたは3ビットを使用する場合、そこは追加情報を格納するために通常は常にゼロであるため、内部ポインタが発生する可能性があります。
+* ポインタはもともとは開始ポインタであったかもしれず、故意に（あるいは故意でなく）プログラムによって動かされたかもしれません。特に、プログラムが *tagged pointer* ([Tagged pointer - Wikipedia](https://en.wikipedia.org/wiki/Tagged_pointer))を使用している場合、つまり、ポインタの下位1ビット、2ビットまたは3ビットを使用する場合、そこは追加情報を格納するために通常は常にゼロであるため、内部ポインタが発生する可能性があります。
 * メモリ内のランダムなジャンク値で、まったく無関係であり、ただの偶然かもしれません。
 * C++ `std::string`の内部char配列へのポインタかもしれません。たとえば、`std::string`の先頭に3ワードを追加して、長さ・容量・および参照カウントを、文字の配列を含むメモリの前に格納するコンパイラがあります。これら3つの単語の直後にポインタを返し、char配列を指します。
 * コードによっては、メモリブロックを割り当てて、64ビットの数値として格納するために最初の8バイトを使用するかもしれません。`sqlite3MemMalloc`はこれを行います。
